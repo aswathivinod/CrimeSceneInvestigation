@@ -1,0 +1,32 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<form method="post" action="index.html">
+		<h1 style="font-family: courier; color: red;" align="center ">VIEW NOTIFICATION </h1>
+<div class="notify" style="color: #F0f0f0">
+<table align="center" class="table table-bordered">
+  <tbody><tr>
+
+      <td width="60">NID</td>
+            <td width="60">SUBJECT</td>
+      <td width="210">PUBLISHEDDATE</td>
+    </tr>
+
+  </tbody>
+      
+       {% if objval %}
+  {% for obj in objval %}
+      <tr>
+      <td>{{ obj.nid }}</td>
+      <td>{{ obj.subject }}</td>
+      <td>{{ obj.publisheddate }}</td>
+
+      </tr>
+
+
+  {% endfor %}
+
+  {% endif %}
+</table>
+</div>
+
+{% endblock %}

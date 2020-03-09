@@ -1,0 +1,39 @@
+{% extends 'temp/temp.html' %}
+{% block base %}
+	<form method="post">
+		<h1 align="center" style="font-family: courier;" >ALLOCATE CASE</h1>
+<div align="center">
+  <table width="517" border="1">
+    <tr>
+      <td width="28">ID</td>
+      <td width="60">CASE NO</td>
+    </tr>
+    <tr>
+      <td height="36"></td>
+      <td></td>
+      <td><input type="submit" name="view" value="VIEW"class="btn btn-primary" align="right"></td>
+      
+        </form>  
+            </td>
+    </tr>
+    </table>
+
+    <tr>
+      <td>TYPE</td>
+        <select name="dist">
+          <option >SELECT</option>
+          <option value="civil">CIVIL</option>
+          <option value="women">WOMEN</option>
+
+        </select>
+
+        </td>
+    </tr>
+    <div>
+    <tr>
+       <td><input type="submit" name="allocate" value="ALLOCATE"class="btn btn-primary" align="right"></td>
+     </tr>
+   </div>
+  </div>
+
+{% endblock %}

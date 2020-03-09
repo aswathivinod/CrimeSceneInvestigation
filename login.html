@@ -1,0 +1,31 @@
+{% extends 'temp/temp.html' %}
+{% block base %}
+	<form method="post">
+     {% csrf_token %}
+		<h1 align="center" style="font-family: courier ;" >LOGIN</h1>
+		<table align="center" width="400">
+			<tr>
+
+			<td>
+				<input type="text" name="unam" placeholder="username" required="" class="form-control">
+			</td>
+		</tr>
+			<tr>
+
+			<td>
+				<input type="password" name="pswd" placeholder="password" required="" class="form-control">
+			</td>
+		</tr>
+			<tr>
+			<td>
+				<input type="submit" name="login" value="LOGIN" class="btn btn-block">
+			</td>
+{#			<td>#}
+{#				<input type="submit" name="register" value="REGISTER HERE" style="background-color: grey;width: 150px; height:30px;font-family: cursive;">#}
+{#			</td>#}
+               <td><li><a href="/userreg/"><font color="white"> REGISTER HERE</font></a ></li></td>
+	</table>
+		
+	</form>
+
+{%  endblock %}

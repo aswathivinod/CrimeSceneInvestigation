@@ -1,0 +1,76 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<form method="post">
+        {% csrf_token %}
+		<h1 align="center" style="font-family: courier; color: red;" >CASE REGISTRATION</h1>
+		<table align="center">
+		<tr>
+                <td style="font-family: courier; color: white"  >
+				 SUBJECT
+			</td>
+			<td>
+				<input type="text" name="sbjct" class="form-control" placeholder="enter your subject" required="">
+
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			
+		</tr>
+		
+		
+		<tr>
+			<td style="font-family: courier; color: white;">DETAILS</td>
+			<td><textarea rows="4" cols="26" input type="text" name="detail" placeholder="enter your  crime details" class="form-control" required="">
+				</textarea>
+			</td>
+		</tr>
+
+		
+		<tr>
+			<td style="font-family: courier; color: white;"> INCIDENT DATE</td>
+			<td>
+				<input type="date" name="incdat" class="form-control" placeholder="enter date" required="">
+			</td>
+		</tr>
+
+		<tr>
+			<td style="font-family: courier; color: white;"> INCIDENT TIME</td>
+			<td>
+				<input type="time" name="inctim" placeholder="enter time" class="form-control" required="">
+			</td>
+		</tr>
+
+            <tr>
+			<td style="font-family: courier; color: white;"> INCIDENT PLACE</td>
+			<td>
+				<input type="text" name="incplc" placeholder="enter place" class="form-control" required="">
+			</td>
+		</tr>
+			<tr>
+			<td style="font-family: courier; color: white;">WANT TO ATTACH AN IMAGE</td>
+			<td style="font-family: courier; color: white;">
+				<input type="radio" name="grp" value="yes" required="">YES
+			</td>
+			<td style="font-family: courier; color: white;">
+				<input type="radio" name="grp" value="no" required="">NO
+			</td>
+		</tr>
+
+		
+		<tr>
+			<td>
+				<input type="submit" name="submit" value="SUBMIT"  class="btn btn-default" style="background-color: grey;width: 150px; height:30px;font-family: cursive;">
+			</td>
+
+			<td>
+				<input type="reset" name="cancel" value="CANCEL" class="btn btn-default"  style="background-color: grey;width: 150px; height:30px;font-family: cursive;" >
+			</td>
+        </tr>
+	</table>
+		
+	</form>
+
+
+{% endblock %}

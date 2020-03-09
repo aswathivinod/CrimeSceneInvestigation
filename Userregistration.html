@@ -1,0 +1,135 @@
+{% extends 'temp/temp.html' %}
+{% block base %}
+    <script>
+    function check() {
+        if (document.getElementById('pass').value ==
+            document.getElementById('rpass').value){
+            document.getElementById('message').style.color='black';
+            document.getElementById('message').innerHTML='Matching';
+
+        }
+        else {
+            document.getElementById('message').style.color='red';
+            document.getElementById('message').innerHTML='Mismatching';
+
+        }
+
+    }
+
+	</script>
+    <div class="user">
+	<form method="post">
+        {% csrf_token %}
+		<h1 align="center" style="font-family: courier; color: red;" >USER REGISTRATION</h1>
+		<table align="center"  width="900">
+		<tr>
+			<td style="font-family: courier; color: white"  >
+				NAME
+			</td>
+			<td>
+				<input type="text" name="cname" placeholder="enter user name" class="form-control" required="" >
+
+			</td>
+		</tr>
+		<tr>
+			
+			<td style="font-family: courier; color: white;">ADDRESS</td>
+			<td><textarea rows="4" cols="26" input type="text" name="address" class="form-control" placeholder="enter user address" required="" >
+				</textarea>
+			</td>
+		</tr>
+
+
+
+
+			<tr>
+			
+			<td style="font-family: courier; color: white;">GENDER</td>
+			<td style="font-family: courier; color: white;">
+				<input type="radio"  name="Gender" value="male" required="">male
+			
+				<input type="radio"  name="Gender" value="female" required="">female
+			</td>
+		</tr>
+<tr>
+			<td style="font-family: courier; color: white;">
+				DATE OF BIRTH
+			</td>
+			<td>
+				<input type="Date" name="Date" class="form-control" required="">
+
+			</td>
+		</tr>
+            <tr>
+
+			<td style="font-family: courier; color: white;">PHONE NO</td>
+			<td>
+				<input type="number" name="mobile" placeholder="enter number" class="form-control" required ="">
+			</td>
+		</tr>
+		
+<tr>
+			<td style="font-family: courier; color: white;">DISTRICT</td>
+			<td>
+				<select name="dist" class="form-control">
+					<option >SELECT OPTIONS</option>
+					<option value="clt">Calicut</option>
+					<option value="mal">Malappuram</option>
+                    <option value="erk">Ernakulam</option>
+                    <option value="knr">Kannur</option>
+
+				</select>
+
+				</td>
+		</tr>
+
+
+<tr>
+
+			<td style="font-family: courier; color: white;">EMAIL</td>
+			<td>
+				<input type="email" name="email" placeholder="enter email address" class="form-control" required="">
+			</td>
+		</tr>
+		
+		<tr>
+			<td style="font-family: courier; color: white;">PASSWORD</td>
+			<td>
+				<input type="password" name="pass" id="pass" placeholder="enter password " class="form-control" required="" onkeyup="check();">
+
+
+
+            </td>
+		</tr>
+
+		<tr>
+			<td style="font-family: courier; color: white;">CONFIRM PASSWORD</td>
+			<td>
+				<input type="password" name="rpass" id="rpass" placeholder="confirm password" class="form-control" required="" onkeyup="check();">
+            <label><span id='message'></span></label>
+            <label><span id='message'></span></label>
+            </td>
+		</tr>
+		<tr>
+			<td></td>
+			
+			<td>
+				<input type="submit" name="reg"   value="REGISTER" style="background-color: grey ; width: 150px; height: 30px;" class="btn btn-default" align="right" >
+
+			</td>
+			<td>
+				<input type="reset"    name="cancel" value="CANCEL" style="background-color: grey ; width: 150px; height: 30px;" class="btn btn-primary" align="right" >
+
+			</td>
+		</tr>
+        </table>
+		
+	</form>
+    </div>
+    <br>
+
+    {% if  msg %}
+    <div class="well text-center" style="color: black!important;"><h4>{{ msg }}</h4></div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<form method="post" action="index.html">
+    <h1 style="font-family: courier; color: red;" align="right ">VIEW WANTED LIST </h1>
+		<h1 align="center" style="font-family: courier;"></h1>
+<div class="wantedlist " align="center" style="color: #f6fafe">
+
+  <table align="right" class="table table-bordered">
+   
+		
+
+      <tbody><tr>
+            <td width="60">ID</td>
+      <td width="60">NAME</td>
+            <td width="60">AGE</td>
+      <td width="210">CRIMEDETAIL</td>
+      <td width="62">MISSINGDATE</td>
+            <td width="60">MISSINGLOCATION</td>
+      <td width="60">MARK</td>
+            <td width="60">DISTRICT</td>
+            <td width="60">CONTACT</td>
+      <td width="490">IMAGE</td>
+    </tr>
+
+  </tbody>
+
+
+
+{% if objval %}
+  {% for obj in objval %}
+      <tr>
+      <td>{{ obj.wid }}</td>
+      <td>{{ obj.name }}</td>
+      <td>{{ obj.age }}</td>
+      <td>{{ obj.crimedetails }}</td>
+      <td>{{ obj.missingdate }}</td>
+      <td>{{ obj.missinglocation }}</td>
+      <td>{{ obj.marks }}</td>
+      <td>{{ obj.district }}</td>
+        <td>{{ obj.contact }}</td>
+      <td>{{ obj.image }}</td>
+      </tr>
+
+
+  {% endfor %}
+
+  {% endif %}
+
+
+
+  </table>
+
+</div>
+    </form>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'temp/temp.html' %}
+{% block base %}
+	<form method="post">
+    {% csrf_token %}
+		<h1 align="center" style="color: red" >CASE REGISTRATION</h1>
+		<table align="center">
+			<tr>
+			<td style="color: white"> CASE NO </td>
+			<td>
+				<input type="text" name="caseno" placeholder="enter the case no" required="" >
+			</td>
+		</tr>
+			<tr>
+			<td style="color: white">UPLOAD IMAGE</td>
+			<td>	<input type="file" name="filename">
+				<img src="#">
+			</td>
+			</tr>
+			<tr>
+			<td>
+				<input type="submit" name="SUBMIT" value="SUBMIT" style="background-color: grey;width: 150px; height:50px;font-family: cursive;">
+			</td>
+	</table>
+		
+	</form>
+     <br>
+
+    {% if  msg %}
+    <div class="well text-center" style="color: black!important;"><h4>{{ msg }}</h4></div>
+    {% endif %}
+
+{% endblock %}

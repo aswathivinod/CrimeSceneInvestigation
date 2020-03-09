@@ -1,0 +1,41 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+	<form method="post">
+		<h1 align="center" style="font-family: courier; color: red"   > VIEW USER REGISTRATION</h1>
+
+  <table align="center" class="table table-bordered" style="color: white">
+  <tbody>
+    <tr>
+      <td width="28">ID</td>
+      <td width="60">NAME</td>
+      <td width="210">ADDRESS</td>
+      <td width="62">EMAIL</td>
+      <td width="60">GENDER</td>
+       <td width="60">DOB</td>
+        <td width="60">PHONENO</td>
+         <td width="60">DISTRICT</td>
+
+    </tr></tbody>
+  {% if objval %}
+  {% for obj in objval %}
+      <tr>
+      <td >{{ obj.uid }}</td>
+      <td>{{ obj.name }}</td>
+      <td>{{ obj.address }}</td>
+      <td>{{ obj.email }}</td>
+      <td>{{ obj.gender }}</td>
+      <td>{{ obj.dob }}</td>
+      <td>{{ obj.phoneno }}</td>
+      <td>{{ obj.district }}</td>
+      </tr>
+
+  {% endfor %}
+
+  {% endif %}
+
+  </table>
+    </form>
+
+
+
+{% endblock %}

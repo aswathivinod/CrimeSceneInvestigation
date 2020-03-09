@@ -1,0 +1,27 @@
+{% extends 'temp/temp.html' %}
+{% block base %}
+	<form method="post">
+		<h1 align="center" style="font-family: courier ;" >ADD FINDINGS</h1>
+		<table align="center">
+			<tr>
+			<td> CASE NO </td>
+			<td>
+				<input type="text" name="caseno" placeholder="enter the case no" required="">
+			</td>
+		</tr>
+		<tr>
+			
+			<td>FINDINGS</td>
+			<td><textarea rows="4" cols="26" input type="text" name="finding" required="" >
+				</textarea>
+			</td>
+		</tr>
+			<tr>
+			<td>
+				<input type="submit" name="ADD" value="ADD" style="background-color: grey;width: 150px; height:50px;font-family: cursive;">
+			</td>
+	</table>
+		
+	</form>
+
+{%  endblock %}
